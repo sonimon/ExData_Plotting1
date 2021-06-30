@@ -1,4 +1,4 @@
-#Exploratory Data Analysis Week 1 Programming Assignment. Part 1
+#Exploratory Data Analysis Week 1 Programming Assignment. Part 2
 #Load  data from the txt file (; delimitter), format defined in the documentation
 #Assumption: THe data file "household_power_consumption.txt" is available in the working directory
 
@@ -15,9 +15,9 @@ powerdata <- subset(powerdata,  Date == "1/2/2007"|Date == "2/2/2007" )
 powerdata$datetime <- strptime(paste(powerdata$Date, powerdata$Time), "%d/%m/%Y %H:%M:%S")
 
 #Open png file with predefined size
-png(filename = "plot1.png", width = 480, height =  480, units = "px")
-#Create the histogram
-hist(powerdata$Global_active_power, col="red", main="Global Active Power", xlab = "Global Active Power (kilowatts)")
+png(filename = "plot2.png", width = 480, height = 480, units = "px")
+#Create the plot
+plot(powerdata$datetime, powerdata$Global_active_power, type = "l", ylab = "Global Active Power (kilowatts)", xlab="")
 #Close the devise so that the png file is closed and available for viewing 
 dev.off()
 
